@@ -40,9 +40,9 @@ def cal_prf_metrics(pred_list, gt_list, thresh_step=0.01):
     r = [item[2] for item in final_accuracy_all]
     f = [item[3] for item in final_accuracy_all]
 
-    print("Average of Precision: " + str(np.mean(p)))
-    print("Average of Recall: " + str(np.mean(r)))
-    print("Average of F-score: " + str(np.mean(f)))
+    print("Average of Precision: " + str(sum(p)/len(p))
+    print("Average of Recall: " + str(sum(r)/len(r)))
+    print("Average of F-score: " + str(sum(f)/len(f)))
     
     return final_accuracy_all
 
