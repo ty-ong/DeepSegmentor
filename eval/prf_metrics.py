@@ -25,9 +25,9 @@ def cal_prf_metrics(pred_list, gt_list, thresh_step=0.01):
             stat.append(get_statistics(pred_img, gt_img))
         
         # get tp, fp, fn
-        tp = np.sum([v[0] for v in statistics])
-        fp = np.sum([v[1] for v in statistics])
-        fn = np.sum([v[2] for v in statistics])
+        tp = np.sum([v[0] for v in stat])
+        fp = np.sum([v[1] for v in stat])
+        fn = np.sum([v[2] for v in stat])
 
         # calculate precision
         p_acc = 1.0 if tp==0 and fp==0 else tp/(tp+fp)
