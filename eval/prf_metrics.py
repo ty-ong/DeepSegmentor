@@ -8,6 +8,7 @@ Calculate sensitivity and specificity metrics:
 """
 
 import numpy as np
+import statistics
 from data_io import imread
 
 def cal_prf_metrics(pred_list, gt_list, thresh_step=0.01):
