@@ -16,13 +16,13 @@ def cal_prf_metrics(pred_list, gt_list, thresh_step=0.01):
 
     for thresh in np.arange(0.0, 1.0, thresh_step):
         print(thresh)
-        statistics = []
+        stat = []
         
         for pred, gt in zip(pred_list, gt_list):
             gt_img   = (gt/255).astype('uint8')
             pred_img = (pred/255 > thresh).astype('uint8')
             # calculate each image
-            statistics.append(get_statistics(pred_img, gt_img))
+            stat.append(get_statistics(pred_img, gt_img))
         
         # get tp, fp, fn
         tp = np.sum([v[0] for v in statistics])
