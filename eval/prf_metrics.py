@@ -34,6 +34,15 @@ def cal_prf_metrics(pred_list, gt_list, thresh_step=0.01):
         r_acc = tp/(tp+fn)
         # calculate f-score
         final_accuracy_all.append([thresh, p_acc, r_acc, 2*p_acc*r_acc/(p_acc+r_acc)])
+    
+    p = [item[1] for item in final_accuracy_all]
+    r = [item[2] for item in final_accuracy_all]
+    f = [item[3] for item in final_accuracy_all]
+
+    print("Average of Precision: " + statistics.mean(p))
+    print("Average of Recall: " + statistics.mean(r))
+    print("Average of F-score: " + statistics.mean(f))
+    
     return final_accuracy_all
 
 def get_statistics(pred, gt):
